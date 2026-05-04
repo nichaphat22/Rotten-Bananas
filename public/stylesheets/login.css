@@ -1,0 +1,134 @@
+ /* all */
+ @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+
+ * {
+     font-family: 'IBM Plex Sans Thai', sans-serif;
+ }
+
+
+ /* login.css*/
+
+ /* banana big */
+
+ img.bnnlogin {
+     width: 80%;
+ }
+
+ a.yllw {
+     color: #EBCC00;
+     font-size: 1em;
+     text-decoration-line: underline;
+ }
+
+ a.yllw:hover {
+     text-shadow: #000000;
+     color: #52A749;
+ }
+
+ /* banana login */
+ img.lgbnn {
+     width: 30%;
+ }
+
+ p.logintt {
+     color: #EBCC00;
+     font-size: 1.5em;
+     font-weight: 700;
+     text-shadow: 1px -1px #5f5200a7
+ }
+
+
+ .login-form {
+     margin-top: 25px;
+     text-align: left;
+     font-size: 0.5em;
+ }
+
+ .ttxt {
+     font-size: 1em;
+ }
+
+ input[type=email] {
+     border: none;
+     border-bottom: 2px solid #000000;
+     border-top: 0px;
+     border-radius: 0px;
+     font-weight: bold;
+     outline: 0;
+     margin-bottom: 20px;
+     padding-left: 0px;
+     color: #000000;
+ }
+
+ input[type=password] {
+     border: none;
+     border-bottom: 2px solid #000000;
+     border-top: 0px;
+     border-radius: 0px;
+     font-weight: bold;
+     outline: 0;
+     padding-left: 0px;
+     margin-bottom: 20px;
+     color: #000000;
+ }
+
+ .form-group {
+     margin-bottom: 40px;
+     outline: 0px;
+ }
+
+ .form-control:focus {
+     border-color: inherit;
+     -webkit-box-shadow: none;
+     box-shadow: none;
+     border-bottom: 2px solid #EBCC00;
+     outline: 0;
+     color: #000000;
+ }
+
+ input:focus {
+     outline: none;
+     box-shadow: 0 0 0;
+ }
+
+ label {
+     margin-bottom: 0px;
+ }
+
+ .form-control-label {
+
+     color: #6C6C6C;
+     font-weight: bold;
+     letter-spacing: 1px;
+ }
+
+ .btn-outline-yellow {
+     background-color: #FDDF59;
+     color: #000000;
+     border-radius: 10px;
+     font-weight: bold;
+     letter-spacing: 1px;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+ }
+
+ .btn-outline-yellow:hover {
+     background-color: #ffffff;
+     color: #000000;
+     border-color: #FDDF59;
+     right: 0px;
+ }
+
+
+
+
+ .login-text {
+     text-align: left;
+     padding-left: 0px;
+     color: #A2A4A4;
+     font-size: 0.5em;
+ }
+
+ .loginbttm {
+     padding: 0px;
+ }
+

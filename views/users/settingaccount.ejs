@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- logo -->
+    <link rel="icon" type="image/png"
+        href="https://firebasestorage.googleapis.com/v0/b/mbwproject-78d38.appspot.com/o/Logo.png?alt=media&token=de0aac26-de6a-43c0-839d-9032323646cd&_gl=1*15y48q1*_ga*MTg1NDY0MDk2OC4xNjk2MzM4MjQ3*_ga_CW55HF8NVT*MTY5NjMzODI0Ny4xLjEuMTY5NjMzODYxNy40NC4wLjA." />
+
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/setting-account.css">
+
+    <title>Rotten Bananas - setting</title>
+
+
+</head>
+<!-- <style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #setting {
+        width: 80%;
+    }
+
+    .content-setting {
+        float: left;
+        /* จัดให้อยู่ด้านซ้ายของพื้นหลังรูปภาพ */
+        width: 50%;
+        /* กว้างของเนื้อหา */
+        padding: 20px;
+        /* ขอบข้างขวาของเนื้อหา */
+    }
+
+    .background-image {
+        float: right;
+    }
+
+    #edit-account {
+        background-color: #F9F0B3;
+        padding: 30px 30px;
+        border-radius: 20px;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+    }
+    .info {
+        margin-bottom: 20px;
+    }
+    #disabledSelect {
+        background-color: #F2DE59;
+        width: 35%;
+        box-shadow: 0px -3px 3px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+    }
+    #btn-setting {
+        background-color: #FFD643;
+        color: black;
+        border-radius: 20px;
+        width: 20%;
+        border: none;
+        box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+        float: right;
+        margin-top: 50px;
+        margin-right: 20px;
+    }
+    #haccount {
+        margin-bottom: 25px;
+    }
+</style> -->
+
+<body>
+    <%- include('../partials/navlogin.ejs') %>
+        <div class="content">
+            <div id="setting">
+
+                <div class="content-setting">
+                    <h1 id="haccount">แก้ไขบัญชี</h1>
+                    <form action="/settingaccount/editacc/:id" method="post">
+                        <div id="edit-account">
+                            <legend class="info">ข้อมูลส่วนบุคคล</legend>
+                            <div class="row mb-3">
+                                <label for="disabledTextInput" class="col-sm-2 col-form-label">ลิ้งรูป: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="imgUser" placeholder="โปไฟล์ผู้ใช้" value="<%= user.imgUser %>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="disabledTextInput" class="col-sm-2 col-form-label">ชื่อ: </label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="disabledTextInput" class="form-control"
+                                        value="<%= user.username %>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="inputEmail3" class="col-sm-2 col-form-label">อีเมล: </label>
+                                <div class="col-sm-10">
+                                    <input type="email" class="form-control" id="inputEmail3" value="<%= user.email %>">
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="disabledSelect" class="col-sm-2 col-form-label" id="gender">เพศ:</label>
+                                <div class="col-sm-10">
+                                    <select id="disabledSelect" class="form-select" name="gender">
+                                        <option value="ชาย" <% if (user.gender==='ชาย' ) { %>selected<% } %>>ชาย
+                                        </option>
+                                        <option value="หญิง" <% if (user.gender==='หญิง' ) { %>selected<% } %>>หญิง
+                                        </option>
+                                        <option value="LGBTQIA+" <% if (user.gender==='LGBTQIA+' ) { %>selected<% } %>
+                                                >LGBTQIA+</option>
+                                        <option value="ไม่ระบุ" <% if (user.gender==='ไม่ระบุ' ) { %>selected<% } %>
+                                                >ไม่ระบุ</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary" id="btn-setting">ยืนยัน</button>
+                    </form>
+                </div>
+                <img src="\images\baa.png" alt="..." class="background-image">
+            </div>
+        </div>
+        <%- include('../partials/footerlogin.ejs') %>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                crossorigin="anonymous"></script>
+</body>
+
+</html>

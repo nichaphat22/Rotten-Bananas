@@ -1,0 +1,114 @@
+/* home-login */
+body {
+    margin: 0 0;
+    /*             
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+#movie {
+    margin: 30px 20px 20px 20px;
+}
+
+#homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#link-mv {
+    text-decoration: none;
+    color: black;
+}
+
+.contenthome {
+    width: 80%;
+}
+
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-item img {
+    height: 650px;
+}
+
+#card {
+    border: none;
+}
+
+#img-home {
+    border-radius: 10px;
+    width: 12rem;
+    height: 17rem;
+}
+
+/* .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.card a {
+    color: black;
+    text-decoration: none;
+}
+
+#title {
+    font-weight: bold;
+    font-size: 16px;
+    display: flex;
+    justify-content: left;
+    margin: 0;
+}
+
+#s1 {
+    color: #EBCC00;
+    font-size: 3rem;
+}
+
+#s2 {
+    color: #EBCC00;
+    font-size: 2rem;
+}
+
+.banana {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+}
+
+.name-mv {
+    display: flex;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+#m1 {
+    padding: 20px 5px;
+}
+
+hr {
+    border-width: 3px;
+    border-color: #EBCC00;
+    margin-top: 10px;
+}
+.carousel-control-prev-icon,.carousel-control-next-icon{
+    background-color: #0000007c ;
+    width: 50px;
+    height: 50px;
+}
+#save {
+    width: 11rem;
+    background-color: #FFD643;
+    border-radius: 20px ;
+    border: 1px solid black;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+}
+span {
+    margin-top: 8px;
+    font-size: 18px;
+}

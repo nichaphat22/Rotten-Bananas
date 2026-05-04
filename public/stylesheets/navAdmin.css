@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+
+:root {
+    --main-color: #000;
+    --color-dark: #34425A;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans Thai', sans-serif;
+}
+
+.img-movie {
+    width: 400px;
+    height: 500px;
+    margin: 0 0;
+  }
+
+  .imgmv{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+#menu-toggle {
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    height: 100%;
+    width: 300px;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 100%;
+    background: #000;
+    transition: left 300ms;
+}
+
+.side-header {
+    box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 20%);
+    background: #000000;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.side-header h2 {
+    color: rgba(235, 204, 0, 1);
+    font-weight: 400;
+}
+
+.side-header span {
+    color: #fff;
+    font-weight: 400;
+}
+
+.side-content {
+    height: calc(100vh - 60px);
+    overflow: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.profile {
+    text-align: center;
+    padding: 1.5rem 0rem;
+    color: #fff;
+}
+
+.profile h5 {
+    color: #fff;
+    font-weight: 500;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.profile-img {
+    height: 90px;
+    width: 90px;
+    display: inline-block;
+    margin: 0 auto 1rem auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    border: 3px solid #fff;
+}
+
+.profile h3 {
+    color: #fff;
+    font-weight: 500;
+}
+
+.profile small {
+    color: #fff;
+}
+
+.sidebar {
+    overflow-y: auto;
+
+}
+
+.side-menu ul {
+    text-align: center;
+
+}
+
+.side-menu a {
+    display: block;
+    padding: .5rem 0rem;
+}
+
+.side-menu a:active {
+    background: #34425A;
+}
+
+
+.side-menu a.active span,
+.side-menu a.active small {
+    color: #fff;
+}
+
+.side-menu a span {
+    display: block;
+    text-align: center;
+    font-size: 1.7rem;
+}
+
+.side-menu a span,
+.side-menu a small {
+    color: #fff;
+}
+
+#menu-toggle:checked~.sidebar {
+    width: 60px;
+
+}
+
+#menu-toggle:checked~.sidebar .side-header span {
+    display: none;
+
+}
+
+
+#menu-toggle:checked~.main-content {
+    margin-left: 60px;
+    width: calc(100% - 60px);
+}
+
+#menu-toggle:checked~.main-content header {
+
+    left: 60px;
+
+}
+
+
+
+#menu-toggle:checked~.sidebar .profile,
+#menu-toggle:checked~.sidebar .side-menu a small {
+    display: none;
+}
+
+#menu-toggle:checked~.sidebar .side-menu a span {
+    font-size: 1.3rem;
+    margin-top: 20px;
+}
+
+.main-content {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    transition: margin-left 300ms;
+}
+
+header {
+    position: fixed;
+    right: 0;
+    top: 0;
+    left: 300px;
+    z-index: 100;
+    height: 70px;
+    box-shadow: 0px 5px 5px -5px rgb(0, 0, 0, 20%);
+    background: rgba(235, 204, 0, 1);
+    transition: left 300ms;
+}
+
+.header-content,
+.header-menu {
+    display: flex;
+    align-items: center;
+
+}
+
+.header-content {
+    margin-top: 20px;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+}
+
+.header-content label {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.header-menu {
+    /* margin-right: 1rem;
+    position: relative; */
+    justify-content: flex-end;
+    padding-top: .5rem;
+    position: relative;
+}
+
+.user-logout {
+    display: flex;
+    align-items: center;
+}
+
+.user-logout span a {
+    color: #000;
+}
+
+.user-logout span:last-child {
+    display: inline-block;
+    margin-left: .3rem;
+    font-size: 1.5rem;
+
+}
+
+
+
+main {
+    background: rgb(255, 255, 255);
+    margin-top: 60px;
+    /* min-height: calc(100vh - 60px); */
+}
+
+@media only screen and (max-width: 1200px) {
+    .analytics {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .analytics {
+        grid-template-columns: 100%;
+    }
+
+    .sidebar {
+        left: -300px;
+        z-index: 90;
+    }
+
+    header {
+        left: 0;
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    #menu-toggle:checked~.sidebar {
+        left: 0px;
+    }
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: #fff;
+}

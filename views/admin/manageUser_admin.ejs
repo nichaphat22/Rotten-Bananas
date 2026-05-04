@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- logo -->
+    <link rel="icon" type="image/png"
+        href="https://firebasestorage.googleapis.com/v0/b/mbwproject-78d38.appspot.com/o/Logo.png?alt=media&token=de0aac26-de6a-43c0-839d-9032323646cd&_gl=1*15y48q1*_ga*MTg1NDY0MDk2OC4xNjk2MzM4MjQ3*_ga_CW55HF8NVT*MTY5NjMzODI0Ny4xLjEuMTY5NjMzODYxNy40NC4wLjA." />
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/all.css"> -->
+    <title>Rotten Bananas - User</title>
+    <!-- nav -->
+    <link rel="stylesheet" href="/stylesheets/navAdmin.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+</head>
+
+<body>
+    <%- include('../partials/navAdmin.ejs') %>
+        <div class="main-content ">
+            <div class="container-main">
+                <div class="headad">
+                    <h1>จัดการสมาชิก</h1>
+                </div>
+                <div class="table_p">
+                    <table>
+                        <tr>
+                            <th>ไอดีผู้ใช้</th>
+                            <th>ชื่อผู้ใช้</th>
+                            <th>อีเมล</th>
+                            <th>เพศ</th>
+                            <th> </th><!-- ไอคอนถังขยะ -->
+                        </tr>
+                        <% if (users.length>0) { %>
+                            <% users.forEach(ausers=> { %>
+                        <tr>
+                            <td id="id">
+                                <%= ausers._id %>
+                            </td>
+
+                            <td>
+                                <%= ausers.username %>
+                            </td>
+
+                            <td>
+                                <%= ausers.email %>
+                            </td>
+
+                            <td>
+                                <%= ausers.gender %>
+                            </td>
+
+                            <!-- ไอคอนถังขยะ -->
+                            <td class="bin">
+                                <a class="delete" data-id="<%= ausers._id %>" style="color: black;">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                        <path
+                                            d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z" />
+                                    </svg>
+                                </a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                        <% } else { %>
+                            <p>There are no students to display......</p>
+                            <% } %>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const deleteButtons = document.querySelectorAll('a.delete');
+
+                deleteButtons.forEach(deleteButton => {
+                    deleteButton.addEventListener('click', (e) => {
+                        e.preventDefault(); // ป้องกันพฤติกรรมลิงก์เริ่มต้น
+
+                        const confirmDelete = confirm("ยืนยันการลบผู้ใช้");
+
+                        if (confirmDelete) {
+                            const usersId = deleteButton.getAttribute('data-id');
+                            const deleteEndpoint = `/admin/manageUser/${usersId}`;
+
+                            fetch(deleteEndpoint, {
+                                method: 'DELETE'
+                            })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.redirect) {
+                                        window.location.href = data.redirect;
+                                    }
+                                })
+                                .catch(err => console.log(err));
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+
+
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

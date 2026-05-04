@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png"
+        href="https://firebasestorage.googleapis.com/v0/b/mbwproject-78d38.appspot.com/o/Logo.png?alt=media&token=de0aac26-de6a-43c0-839d-9032323646cd&_gl=1*15y48q1*_ga*MTg1NDY0MDk2OC4xNjk2MzM4MjQ3*_ga_CW55HF8NVT*MTY5NjMzODI0Ny4xLjEuMTY5NjMzODYxNy40NC4wLjA." />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/admin.css">
+    <title>Rotten Bananas - Edit_new</title>
+    <!-- nav -->
+    <link rel="stylesheet" href="/stylesheets/navAdmin.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+
+</head>
+
+<body>
+    <%- include('../partials/navAdmin.ejs') %>
+        <div class="main-content ">
+            <div class="container-main">
+                <div class="headad">
+                    <h1>แก้ไขข่าว</h1>
+                </div>
+                <div class="imgmv">
+                    <img class="img-movie" src="<%= news.imgNews %>" alt="โปสเตอร์">
+                </div>
+
+                <div class="infor">
+                    <form action="/admin/updateNews/<%= news._id %>" method="post">
+                        <input type="text" id="namenew" name="title" placeholder="ชื่อหัวข้อ" value="<%= news.title %>">
+                        <textarea name="detail" placeholder="รายละเอียดข่าว"><%= news.detail %></textarea>
+                        <input type="text" name="imgNews"placeholder="โปสเตอร์" value="<%= news.imgNews %>">
+                        <button type="submit">ยืนยันการแก้ไข</button>
+                    </form>
+                </div>
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+                integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+                integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+                crossorigin="anonymous"></script>
+            <script>
+              
+
+            </script>
+        </div>
+
+
+</body>
+
+</html>

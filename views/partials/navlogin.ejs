@@ -1,0 +1,114 @@
+
+    <style>
+        /* all */
+        @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai&display=swap');
+
+        * {
+            font-family: 'IBM Plex Sans Thai', sans-serif;
+        }
+
+        /* nav.css */
+        .navbar {
+            background-color: black;
+            
+        }
+        .hbg{
+            background-color: #EBCC00;
+            border-radius: 10px;
+            border: #EBCC00 solid 2px;
+            padding: 20px;
+        }
+        a.nav-link.active{
+            background-color: #EBCC00;
+            border-bottom: white solid 5px;
+            color: black;
+            font-weight:bolder;
+            
+            
+        }
+        a.nav-link:hover{
+            background-color: #EBCC00;
+            border-bottom: white solid 5px;
+            color: black;
+            font-weight:bolder;
+            transition: .5s;
+        }
+        a.txt{
+            color: #ffffff;
+        }
+        i:hover{
+            border-radius: 20px;
+            padding: 10px;
+            border: #EBCC00 solid 2px;
+            transition: .5s;
+        }
+
+        /* nav login */
+        a.nav-link.lg{
+            margin-top: .5rem;
+        }
+        
+        a.dropdown-item:hover{
+            color: #EBCC00;
+            background-color: black;
+            transition: ease-in .2s;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg  ">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="/home-login"><img class="me-2" src="https://firebasestorage.googleapis.com/v0/b/mbwproject-78d38.appspot.com/o/Group%2054.png?alt=media&token=d8acb90f-1d0c-41f1-9b21-d35259e5e7bd&_gl=1*1lns4wu*_ga*MTg1NDY0MDk2OC4xNjk2MzM4MjQ3*_ga_CW55HF8NVT*MTY5NjQzMjI1OS43LjEuMTY5NjQzMjQ0Ny41MS4wLjA." alt="Rotten Bananas"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon hbg"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                <form class="d-flex me-auto mb-2 mb-lg-0" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn " type="submit"><i class="fa fa-search" style="color: #EBCC00;"></i></button>
+                </form>
+                <ul class="navbar-nav  ">
+                    <li class="nav-item">
+                        <a class="nav-link ps-5 pe-5 txt" aria-current="page" href="/home-login">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5 pe-5 txt " aria-current="page" href="/news">ข่าวสาร</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link ps-5 pe-5 txt " aria-current="page" href="/userRouter/aboutme-login">เกี่ยวกับเรา</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link text-white ps-5 pe-5 txt lg dropdown-toggle" href="/profile" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Profile</a>
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="/profile">My Profile</a></li>
+                          <!-- <li><a class="dropdown-item" href="#">รายการของฉัน</a></li> -->
+                          <li><hr class="dropdown-divider"></li>
+                          <li><a class="dropdown-item" href="/logout">ออกจากระบบ</a></li>
+                        </ul>
+                      </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+        <script>
+            window.addEventListener('load', () => {
+                const pathname = window.location.pathname;
+                const navLinks = document.querySelectorAll('.nav-link');
+        
+                navLinks.forEach(navLink => {
+                    const href = navLink.getAttribute('href');
+        
+                    if (href === pathname) {
+                        navLink.classList.add('active');
+                    }
+                });
+            });
+        </script>

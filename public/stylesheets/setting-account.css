@@ -1,0 +1,57 @@
+/* setting-account */
+.content {
+            
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#setting {
+    width: 80%;
+}
+
+.content-setting {
+    float: left;
+    /* จัดให้อยู่ด้านซ้ายของพื้นหลังรูปภาพ */
+    width: 50%;
+    /* กว้างของเนื้อหา */
+    padding: 20px;
+    /* ขอบข้างขวาของเนื้อหา */
+}
+
+.background-image {
+    float: right;
+}
+
+#edit-account {
+    background-color: #F9F0B3;
+    padding: 30px 30px;
+    border-radius: 20px;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.info {
+    margin-bottom: 20px;
+}
+#disabledSelect {
+    background-color: #F2DE59;
+    width: 35%;
+    box-shadow: 0px -3px 3px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+#btn-setting {
+    background-color: #FFD643;
+    color: black;
+    border-radius: 20px;
+    width: 20%;
+    border: none;
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+    float: right;
+    margin-top: 50px;
+    margin-right: 20px;
+}
+#haccount {
+    margin-bottom: 25px;
+}
+img {
+    width: 45%;
+}
